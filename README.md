@@ -1,4 +1,3 @@
-# Professional Programming Peractics Repository
+# Professional Programming Practices Repository
 # Group Name: CodeWarriors
 # Assignment 1
-#testing the editing feature prateek
