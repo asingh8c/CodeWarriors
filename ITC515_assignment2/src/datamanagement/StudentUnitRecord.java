@@ -1,5 +1,7 @@
 package datamanagement;
-
+/*
+ * Class to store and retrieve Student Id, Unit code, Assignment marks and final exam marks
+ */
 public class StudentUnitRecord implements IStudentUnitRecord {
 	private Integer sid;
 	private String uc;
