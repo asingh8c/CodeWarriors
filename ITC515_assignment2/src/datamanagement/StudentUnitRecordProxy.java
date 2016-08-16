@@ -1,26 +1,69 @@
 package datamanagement;
+/*
+ * Class to get and set Student marks based of their unit code and student id
+ */
 public class StudentUnitRecordProxy implements IStudentUnitRecord {
-private Integer studentID;
-private String unitCode;
-private StudentUnitRecordManager mngr;
-public StudentUnitRecordProxy( Integer id, String code ) 
-{
-this.studentID = id;this.unitCode = code;
-this.mngr = StudentUnitRecordManager.instance();}
-public Integer getStudentID() { return studentID;}
-public String getUnitCode() { return unitCode; 
-}
-public void setAsg1(float mark) {
-mngr.getStudentUnitRecord( studentID, unitCode ).setAsg1(mark);}
-public float getAsg1() 
-{
-return mngr.getStudentUnitRecord( studentID, unitCode ).getAsg1();}
-public void setAsg2(float mark) { mngr.getStudentUnitRecord( studentID, unitCode ).setAsg2(mark);}
-public float getAsg2() {return mngr.getStudentUnitRecord( studentID, unitCode ).getAsg2();
-}
-public void setExam(float mark) {mngr.getStudentUnitRecord( studentID, unitCode ).setExam(mark);
-}
-public float getExam() 
-{
-return mngr.getStudentUnitRecord( studentID, unitCode ).getExam();}
-public float getTotal() {return mngr.getStudentUnitRecord( studentID, unitCode ).getTotal();}}
+	private Integer studentId;
+	private String unitCode;
+	private StudentUnitRecordManager mngr;
+	public StudentUnitRecordProxy( Integer id, String code ) {
+	this.studentId = id;
+	this.unitCode = code;
+	this.mngr = StudentUnitRecordManager.instance();
+	}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#getStudentId()
+	 */
+	public Integer getStudentId() { 
+		return studentId;
+		}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#getUnitCode()
+	 */
+	public String getUnitCode() {
+		return unitCode; 
+		}
+	public void setAsg1Marks(float mark) {
+		mngr.getStudentUnitRecord( studentId, unitCode ).setAsg1Marks(mark);
+		}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#getAsg1Marks()
+	 */
+	public float getAsg1Marks() {
+		return mngr.getStudentUnitRecord( studentId, unitCode ).getAsg1Marks();
+		}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#setAsg2Marks(float)
+	 */
+	public void setAsg2Marks(float mark) { 
+		mngr.getStudentUnitRecord( studentId, unitCode ).setAsg2Marks(mark);
+		}
+	public float getAsg2Marks() {
+		return mngr.getStudentUnitRecord( studentId, unitCode ).getAsg2Marks();
+		}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#setExamMarks(float)
+	 */
+	public void setExamMarks(float mark) {
+		mngr.getStudentUnitRecord( studentId, unitCode ).setExamMarks(mark);
+	}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#getExamMarks()
+	 */
+	public float getExamMarks() {
+		return mngr.getStudentUnitRecord( studentId, unitCode ).getExamMarks();
+		}
+	/*
+	 * (non-Javadoc)
+	 * @see datamanagement.IStudentUnitRecord#getTotalMarks()
+	 */
+	public float getTotalMarks() {
+		return mngr.getStudentUnitRecord( studentId, unitCode ).getTotalMarks();
+		}
+	}
