@@ -8,9 +8,13 @@ import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class cgUI extends javax.swing.JFrame implements IUnitLister,
+public class classGradeUi extends javax.swing.JFrame implements IUnitLister,
 		IStudentLister {
-	private cgCTL ctl;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private classGradeControl ctl;
 	private javax.swing.DefaultComboBoxModel uM;
 	private javax.swing.DefaultComboBoxModel rM;
 	float f1;
@@ -18,7 +22,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	float f3;
 	Integer sid;
 
-	public cgUI(cgCTL ctl) {
+	public classGradeUi (classGradeControl ctl) {
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
@@ -396,9 +400,9 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	}
 
 	public void setRecord(IStudentUnitRecord record) {
-		jTextField1.setText(new Float(record.getAsg1()).toString());
-		jTextField2.setText(new Float(record.getAsg2()).toString());
-		jTextField3.setText(new Float(record.getExam()).toString());
+		jTextField1.setText(new Float(record.getAsg1Marks()).toString());
+		jTextField2.setText(new Float(record.getAsg2Marks()).toString());
+		jTextField3.setText(new Float(record.getExamMarks()).toString());
 		jLabel5.setText("");
 	}
 

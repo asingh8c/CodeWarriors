@@ -1,17 +1,18 @@
 package datamanagement;
-
-public class cgCTL {
-
-	cgUI CGUI;
+/*
+ * Class used to store and set GUI states
+ */
+public class classGradeControl {
+	classGradeUi CGUI;
 	String cuc = null;
 	Integer currentStudentID = null;
 	boolean changed = false;
 
-	public cgCTL() {
+	public classGradeControl() {
 	}
 
 	public void execute() {
-		CGUI = new cgUI(this);
+		CGUI = new classGradeUi (this);
 		CGUI.setState1(false);
 
 		CGUI.setState2(false);
@@ -89,9 +90,9 @@ public class cgCTL {
 		IStudent s = StudentManager.get().getStudent(currentStudentID);
 
 		IStudentUnitRecord r = s.getUnitRecord(cuc);
-		r.setAsg1(asg1);
-		r.setAsg2(asg2);
-		r.setExam(exam);
+		r.setAsg1Marks(asg1);
+		r.setAsg2Marks(asg2);
+		r.setExamMarks(exam);
 		StudentUnitRecordManager.instance().saveRecord(r);
 		CGUI.setState4(true);
 		CGUI.setState5(false);

@@ -70,7 +70,7 @@ IStudent is;
             
             
             
-            is = createStudentProxy(new Integer(S.getStudentID()));
+            is = createStudentProxy(new Integer(S.getStudentId()));
     s.put(is.getID(), is);}
     um.put( uc, s);
         return s;
