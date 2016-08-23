@@ -30,12 +30,15 @@ public class StudentManager {
 		return self;
 	}
 
-	public IStudent getStudent(Integer id) { // Returns the map key values of student
+	public IStudent getStudent(Integer id) { // Returns the map key values of
+												// student
 		IStudent iStu = stuMap.get(id);
 		return (iStu != null ? iStu : createStudent(id));
 	}
 
-	private Element getStudentElement(Integer id) { // Fetch the student data from xml by id and return the element
+	private Element getStudentElement(Integer id) { // Fetch the student data
+													// from xml by id and return
+													// the element
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentTable")
 				.getChildren("student"))
 			if (id.toString().equals(el.getAttributeValue("sid"))) {
@@ -44,7 +47,9 @@ public class StudentManager {
 		return null;
 	}
 
-	private IStudent createStudent(Integer id) { //Create student if it doesn't exist in student map collection
+	private IStudent createStudent(Integer id) { // Create student if it doesn't
+													// exist in student map
+													// collection
 		IStudent iStu;
 		Element e = getStudentElement(id);
 		if (e != null) {
@@ -60,14 +65,16 @@ public class StudentManager {
 
 	private IStudent createStudentProxy(Integer id) {//
 		Element el = getStudentElement(id);
-
 		if (el != null) {
 			return new StudentProxy(id, el.getAttributeValue("fname"), el.getAttributeValue("lname"));
 		}
 		throw new RuntimeException("DBMD: createStudent : student not in file");
 	}
 
-	public StudentMap getStudentsByUnit(String unitCode) { //return map collections of student for a particular unit
+	public StudentMap getStudentsByUnit(String unitCode) { // return map
+															// collections of
+															// student for a
+															// particular unit
 		StudentMap sMap = unitMap.get(unitCode);
 		if (sMap != null) {
 			return sMap;
