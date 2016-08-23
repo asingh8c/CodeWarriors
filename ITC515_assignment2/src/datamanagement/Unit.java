@@ -1,7 +1,7 @@
 package datamanagement;
 
 public class Unit implements IUnit {
-	private String uc;
+	private String unitCode; //Variable to store the unique code of the unit.
 	private String UN;
 	private float co2;
 	private float co1;
@@ -15,7 +15,7 @@ public class Unit implements IUnit {
 	public Unit(String UC, String un, float f1, float f2, float f3, float f4, float f5, int i1, int i2, int i3,
 			StudentUnitRecordList rl) {
 
-		uc = UC;
+		unitCode = UC;
 		UN = un;
 		co2 = f1;
 		co1 = f2;
@@ -27,7 +27,7 @@ public class Unit implements IUnit {
 	}
 
 	public String getUnitCode() {
-		return this.uc;
+		return this.unitCode;
 	}
 
 	public String getUnitName() {
