@@ -1,18 +1,54 @@
 package datamanagement;
 
+/*
+ * Interface to declare abstract methods to be defined later to 
+ * get Student Id and unit code
+ * set and get assignment and exam marks
+ * get total marks for student
+ */
 public interface IStudentUnitRecord {
+	/*
+	 * Getter method declared to return Integer value for Student Id
+	 */
+	public Integer getStudentId();
 
-    public Integer getStudentID();
-    public String getUnitCode();
+	/*
+	 * Getter method declared to return String value for Unit code
+	 */
+	public String getUnitCode();
 
-    public void setAsg1(float mark);
-    public float getAsg1();
+	/*
+	 * Setter method declared to set Assignment1 marks
+	 */
+	public void setAsg1Marks(float mark);
 
-    public void setAsg2(float mark);
-    public float getAsg2();
+	/*
+	 * Getter method declared to get Assignment1 marks
+	 */
+	public float getAsg1Marks();
 
-    public void setExam(float mark);
-    public float getExam();
+	/*
+	 * Setter method declared to set Assignmen2 marks
+	 */
+	public void setAsg2Marks(float mark);
 
-    public float getTotal();
+	/*
+	 * Getter method declared to get Assignment2 marks
+	 */
+	public float getAsg2Marks();
+
+	/*
+	 * Setter method declared to set Exam marks
+	 */
+	public void setExamMarks(float mark);
+
+	/*
+	 * Getter method declared to get Exam marks
+	 */
+	public float getExamMarks();
+
+	/*
+	 * Getter method declared to get Total marks
+	 */
+	public float getTotalMarks();
 }
