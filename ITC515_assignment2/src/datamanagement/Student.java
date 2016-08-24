@@ -1,9 +1,9 @@
 package datamanagement;
 
 public class Student implements IStudent {
-	private Integer id;
-	private String fn;
-	private String ln;
+	private Integer id;//declare variable for student id
+	private String fn;//declare variable for first name
+	private String ln;//declare variable for last name
 	private StudentUnitRecordList su;
 
 	public Student(Integer id, String fn, String ln, StudentUnitRecordList su) {
@@ -12,23 +12,23 @@ public class Student implements IStudent {
 		this.ln = ln;
 		this.su = su == null ? new StudentUnitRecordList() : su;
 	}
-
+	//Declaration of function to get student Id
 	public Integer getID() {
 		return this.id;
 	}
-
+	//Declaration of function to get student first name
 	public String getFirstName() {
 		return fn;
 	}
-
+	//Declaration of function to set the student first name
 	public void setFirstName(String firstName) {
 		this.fn = firstName;
 	}
-
+	//Declaration of function to get the student last name
 	public String getLastName() {
 		return ln;
 	}
-
+	//Declaration of function to set the student last name
 	public void setLastName(String lastName) {
 
 		this.ln = lastName;
