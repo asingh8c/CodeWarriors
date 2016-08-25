@@ -4,10 +4,11 @@ import org.jdom.*;
 import java.util.List;
 
 /**
+ * This class defines getter, setter the student information when unit code,
+ * student id are chosen in user interface. It also creates new student record
+ * as element
  * 
- * @author asmita This class fetches the student information when unit code,
- *         student id are chosen in user interface. It also creates new student
- *         record as element
+ * @author jtulip
  */
 public class StudentManager {
 	private static StudentManager self = null;
@@ -57,7 +58,7 @@ public class StudentManager {
 			iStu = new Student(new Integer(e.getAttributeValue("sid")), e.getAttributeValue("fname"),
 					e.getAttributeValue("lname"), rList);
 
-			stuMap.put(iStu.getID(), iStu);
+			stuMap.put(iStu.getId(), iStu);
 			return iStu;
 		}
 		throw new RuntimeException("DBMD: createStudent : student not in file");
@@ -84,7 +85,7 @@ public class StudentManager {
 		StudentUnitRecordList unitRecord = StudentUnitRecordManager.instance().getRecordsByUnit(unitCode);
 		for (IStudentUnitRecord i : unitRecord) {
 			iStudent = createStudentProxy(new Integer(i.getStudentId()));
-			sMap.put(iStudent.getID(), iStudent);
+			sMap.put(iStudent.getId(), iStudent);
 		}
 		unitMap.put(unitCode, sMap);
 		return sMap;
