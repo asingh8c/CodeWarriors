@@ -13,7 +13,7 @@ public class Student implements IStudent {
 		this.su = su == null ? new StudentUnitRecordList() : su;
 	}
 	//Declaration of function to get student Id
-	public Integer getID() {
+	public Integer getId() {
 		return this.id;
 	}
 	//Declaration of function to get student first name
