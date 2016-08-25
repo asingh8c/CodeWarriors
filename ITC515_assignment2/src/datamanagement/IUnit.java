@@ -1,5 +1,12 @@
 package datamanagement;
 
+/**
+ * Interface created to declare abstract methods defined later to perform
+ * Student class grade calculation
+ * 
+ * @author jtulip
+ *
+ */
 public interface IUnit {
 
 	public String getUnitCode();

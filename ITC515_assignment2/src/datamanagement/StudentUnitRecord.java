@@ -1,7 +1,10 @@
 package datamanagement;
 
-/*
- * Class to store and retrieve Student Id, Unit code, Assignment marks and final exam marks
+/**
+ * Class to store and retrieve Student Id, Unit code, Assignment marks and final
+ * exam marks
+ * 
+ * @author jtulip
  */
 public class StudentUnitRecord implements IStudentUnitRecord {
 	private Integer studentId; // Attribute variable to store Student Id
@@ -56,7 +59,7 @@ public class StudentUnitRecord implements IStudentUnitRecord {
 	 * @see datamanagement.IStudentUnitRecord#setAsg1Marks(float)
 	 */
 	public void setAsg1Marks(float a1) {
-		if (a1 < 0 || a1 > UnitManager.UM().getUnit(unitCode).getAsg1Weight()) {
+		if (a1 < 0 || a1 > UnitManager.getunitMngrInstance().getUnit(unitCode).getAsg1Weight()) {
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
 		this.asg1Marks = a1;
@@ -77,7 +80,7 @@ public class StudentUnitRecord implements IStudentUnitRecord {
 	 * @see datamanagement.IStudentUnitRecord#setAsg2Marks(float)
 	 */
 	public void setAsg2Marks(float a2) {
-		if (a2 < 0 || a2 > UnitManager.UM().getUnit(unitCode).getAsg2Weight()) {
+		if (a2 < 0 || a2 > UnitManager.getunitMngrInstance().getUnit(unitCode).getAsg2Weight()) {
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
 		this.asg2Marks = a2;
@@ -98,7 +101,7 @@ public class StudentUnitRecord implements IStudentUnitRecord {
 	 * @see datamanagement.IStudentUnitRecord#setExamMarks(float)
 	 */
 	public void setExamMarks(float ex) {
-		if (ex < 0 || ex > UnitManager.UM().getUnit(unitCode).getExamWeight()) {
+		if (ex < 0 || ex > UnitManager.getunitMngrInstance().getUnit(unitCode).getExamWeight()) {
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
 		this.examMarks = ex;

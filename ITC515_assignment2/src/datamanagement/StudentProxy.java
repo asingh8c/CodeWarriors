@@ -1,53 +1,51 @@
 package datamanagement;
 
 public class StudentProxy implements IStudent {
-	private Integer I;
-	private String l;
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private StudentManager studentList;
 
-	private String Il;
-	private StudentManager lI;
-
-	public StudentProxy(Integer id, String fn, String Il) {
-		this.I = id;
-		this.l = fn;
-
-		this.Il = Il;
-		this.lI = StudentManager.get();
+	public StudentProxy(Integer id, String firstName, String lastName) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.studentList = StudentManager.getStudentManager();
 	}
 
-	public Integer getID() {
-		return I;
+	public Integer getId() {
+		return id;
 
 	}
 
 	public String getFirstName() {
-		return l;
+		return firstName;
 	}
 
 	public String getLastName() {
-		return Il;
+		return lastName;
 	}
 
 	public void setFirstName(String firstName) {
 
-		lI.getStudent(I).setFirstName(firstName);
+		studentList.getStudent(id).setFirstName(firstName);
 	}
 
 	public void setLastName(String lastName) {
 
-		lI.getStudent(I).setLastName(lastName);
+		studentList.getStudent(id).setLastName(lastName);
 	}
 
 	public void addUnitRecord(IStudentUnitRecord record) {
-		lI.getStudent(I).addUnitRecord(record);
+		studentList.getStudent(id).addUnitRecord(record);
 	}
 
 	public IStudentUnitRecord getUnitRecord(String unitCode) {
 
-		return lI.getStudent(I).getUnitRecord(unitCode);
+		return studentList.getStudent(id).getUnitRecord(unitCode);
 	}
 
 	public StudentUnitRecordList getUnitRecords() {
-		return lI.getStudent(I).getUnitRecords();
+		return studentList.getStudent(id).getUnitRecords();
 	}
 }
