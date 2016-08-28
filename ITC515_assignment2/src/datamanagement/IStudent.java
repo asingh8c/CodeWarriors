@@ -7,7 +7,7 @@ public interface IStudent {
 
 	public String getFirstName();//variable declaration for get first name
 
-	public void setFirstName(String firstName); //Thilini edited.
+	public void setFirstName(String firstName); //Thilini edited..
 
 	public String getLastName();//variable declaration for get last name
 
